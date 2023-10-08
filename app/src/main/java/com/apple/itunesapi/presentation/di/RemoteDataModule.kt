@@ -10,6 +10,7 @@ import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
 
+//Module for getting MoviesRemoteDataSource instance
 @Module
 @InstallIn(SingletonComponent::class)
 class RemoteDataModule {

@@ -1,5 +1,8 @@
 package com.apple.itunesapi
 
+import android.annotation.SuppressLint
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -17,6 +20,8 @@ import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import java.text.SimpleDateFormat
+import java.util.Calendar
 
 class MoviesFragment : Fragment() {
     private lateinit var viewModel: MoviesViewModel
@@ -26,18 +31,28 @@ class MoviesFragment : Fragment() {
     private var media = "movie"
     private var limit = "200"
 
+    private lateinit var sharedpreferences: SharedPreferences
+
+    @SuppressLint("SimpleDateFormat")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentMoviesBinding.inflate(inflater, container, false)
+
+        saveSharedPreferences()
+
         return binding.root
 
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        //get last date and time here and display to textview
+        binding.tvLastLogin.text = sharedpreferences.getString("lastlog","defaultname").toString()
+
         binding = FragmentMoviesBinding.bind(view)
 
         viewModel = (activity as MainActivity).viewModel
@@ -64,6 +79,20 @@ class MoviesFragment : Fragment() {
         viewMoviesList()
         setSearchMovies()
 
+    }
+
+    private fun saveSharedPreferences(){
+        sharedpreferences = requireActivity().getSharedPreferences("shared_prefs", Context.MODE_PRIVATE)
+        //save current date and time here
+
+        val time = Calendar.getInstance().time
+        val formatter = SimpleDateFormat("yyyy-MM-dd HH:mm")
+        val lastLogtime = formatter.format(time)
+
+        val editor = sharedpreferences?.edit()
+        editor?.putString("lastlog","Previous visit: $lastLogtime")
+        editor?.apply()
+        editor?.commit()
     }
 
     private fun initRecyclerview() {

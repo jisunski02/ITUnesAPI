@@ -10,8 +10,9 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
+//Module for MovieRepository instance
 @Module
-@InstallIn(SingletonComponent::class)
+@InstallIn(SingletonComponent::class) //Automatic built set of components
 class RepositoryModule {
 
     @Singleton

@@ -26,5 +26,7 @@ data class Movies(
     val trackPrice: Double?,
     @SerializedName("primaryGenreName")
     val primaryGenreName: String?,
+    @SerializedName("longDescription")
+    val longDescription: String?,
 
 ): Serializable

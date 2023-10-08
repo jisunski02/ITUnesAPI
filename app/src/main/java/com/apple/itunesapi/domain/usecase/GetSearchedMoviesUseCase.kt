@@ -4,6 +4,7 @@ import com.apple.itunesapi.data.model.MoviesResponse
 import com.apple.itunesapi.data.util.Resource
 import com.apple.itunesapi.domain.repository.MoviesRepository
 
+//Pass values here from MovieRepository
 class GetSearchedMoviesUseCase(private val movieListRepository: MoviesRepository) {
 
     suspend fun execute(term: String, media: String, limit: String): Resource<MoviesResponse> {

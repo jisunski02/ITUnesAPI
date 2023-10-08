@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="The Legend of Aang"
-        android:textSize="20sp"
+        android:textSize="21sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@id/cv_image"
         app:layout_constraintTop_toBottomOf="@id/cv_image"/>
@@ -51,8 +51,28 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="14.99"
+        android:textSize="23sp"
         app:layout_constraintStart_toStartOf="@id/genre"
         app:layout_constraintTop_toBottomOf="@id/genre"/>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/track_price"
+        app:layout_constraintTop_toBottomOf="@id/track_price">
+
+        <TextView
+            android:id="@+id/long_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="14.99"
+            android:textSize="15sp"/>
+
+    </ScrollView>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/add_to_favorites"

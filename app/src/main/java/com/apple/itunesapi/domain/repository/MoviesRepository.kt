@@ -5,6 +5,7 @@ import com.apple.itunesapi.data.model.MoviesResponse
 import com.apple.itunesapi.data.util.Resource
 import kotlinx.coroutines.flow.Flow
 
+//Pass values here from MoviesRepositoryImpl
 interface MoviesRepository {
 
     suspend fun getMovies(term: String, media:String, limit: String): Resource<MoviesResponse>

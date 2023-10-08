@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.apple.itunesapi.R
 import com.apple.itunesapi.data.model.Movies
 import com.apple.itunesapi.databinding.MovieListLayoutBinding
 import com.bumptech.glide.Glide
@@ -49,9 +50,9 @@ class MoviesAdapter: RecyclerView.Adapter<MoviesAdapter.MoviesViewHolder>() {
             binding.title.text = movies.trackName
             binding.genre.text = movies.primaryGenreName
 
-
             Glide.with(binding.movieImage.context)
                 .load(movies.artworkUrl100)
+                .placeholder(R.drawable.baseline_movie_24)
                 .into(binding.movieImage)
 
             if(onHideFavorite == true){

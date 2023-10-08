@@ -12,6 +12,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
+//Module for getting ViewModelFactory instance
 @Module
 @InstallIn(SingletonComponent::class)
 class FactoryModule {

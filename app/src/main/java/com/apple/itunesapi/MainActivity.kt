@@ -12,6 +12,7 @@ import com.apple.itunesapi.presentation.viewmodel.MoviesViewModelFactory
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
+//Annotate @AndroidEntrypoint to access the generated hilt module and any related components and to provide viewmodel factory
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     @Inject

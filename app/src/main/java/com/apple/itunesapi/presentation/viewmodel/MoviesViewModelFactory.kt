@@ -8,8 +8,7 @@ import com.apple.itunesapi.domain.usecase.GetSavedFavoriteMoviesUseCase
 import com.apple.itunesapi.domain.usecase.GetSearchedMoviesUseCase
 import com.apple.itunesapi.domain.usecase.SaveFavoriteMoviesUseCase
 
-//ViewModelFactory for MoviesViewModel
-
+//ViewModelFactory for MoviesViewModel, the constructor parameter are just the same with MoviesViewModel
 class MoviesViewModelFactory(private val app: Application,
                              private val getMoviesUseCase: GetMoviesUseCase,
                              private val getSearchedMoviesUseCase: GetSearchedMoviesUseCase,

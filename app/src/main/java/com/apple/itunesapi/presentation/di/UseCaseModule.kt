@@ -11,6 +11,8 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
+
+//Module for getting GetMoviesUsecase, GetSearchedMoviesUseCase, SaveFavoriteMovieUseCase. GetSavedFavoriteMoviesUsecase instance
 @Module
 @InstallIn(SingletonComponent::class)
 class UseCaseModule {

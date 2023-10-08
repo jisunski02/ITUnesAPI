@@ -37,7 +37,8 @@ class MovieDetailsFragment : Fragment() {
 
         binding.trackName.text = movies.trackName
         binding.genre.text = movies.primaryGenreName
-        binding.trackPrice.text = movies.trackPrice.toString()
+        binding.trackPrice.text = "$"+movies.trackPrice.toString()
+        binding.longDescription.text = movies.longDescription
 
         Glide.with(binding.movieImage.context)
             .load(movies.artworkUrl100)

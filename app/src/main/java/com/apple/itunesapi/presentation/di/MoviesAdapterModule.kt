@@ -7,6 +7,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
+//Module for getting MovieAdapter instance
 @Module
 @InstallIn(SingletonComponent::class)
 class MoviesAdapterModule {

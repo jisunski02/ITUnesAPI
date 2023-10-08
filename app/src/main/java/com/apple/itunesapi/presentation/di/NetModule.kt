@@ -10,6 +10,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
+//Module for getting retrofit and API services instance
 @Module
 @InstallIn(SingletonComponent::class)
 

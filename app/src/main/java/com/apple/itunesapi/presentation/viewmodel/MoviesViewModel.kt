@@ -19,7 +19,7 @@ import com.apple.itunesapi.domain.usecase.SaveFavoriteMoviesUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-//pass an instance of GetMoviesUseCase as a constructor parameter to get the list of movies
+//pass any instance of usecase here related to movies as a constructor parameter
 class MoviesViewModel(
     private val app: Application,
     private val getMoviesUseCase: GetMoviesUseCase,
